@@ -53,3 +53,23 @@ We performed systematic hyperparameter tuning using `GridSearchCV` with 5-fold c
 | **F1-Score (Class 1)** | 0.77 | 0.75 | -0.02 |
 
 **Key Takeaway:** By setting depth constraints (`max_depth=5`), the tuned model reduced overfitting and improved **Precision** for positive predictions (Class 1) from **80% to 82%**, making survival predictions more dependable..
+# 🚢 Titanic Survival Prediction: Production ML Pipeline
+
+An end-to-end Machine Learning project demonstrating the transition from manual, script-based data processing to an automated, scalable **Scikit-Learn Pipeline**. 
+
+The project incorporates feature engineering, leak-proof column transformations, model training using Random Forest, and model serialization for production readiness.
+
+---
+
+## 🎯 Key Highlights & Enhancements
+
+* **Feature Engineering:** Derived high-signal features from raw columns:
+  * `FamilySize`: Combined `SibSp` + `Parch` + 1.
+  * `IsAlone`: Binary indicator for solo travelers.
+* **Automated Preprocessing:** Utilized `ColumnTransformer` to handle missing values, numerical scaling, and categorical encoding dynamically.
+* **Zero Data Leakage:** Ensured all transformations are strictly fit on training data within the `Pipeline` structure.
+* **Model Serialization:** Exported the complete trained workflow as a single `.pkl` artifact for instant deployment.
+
+---
+
+## 🏗️ Pipeline Architecture
